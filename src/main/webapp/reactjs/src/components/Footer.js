@@ -9,7 +9,7 @@ let fullYear=new Date().getFullYear();
 <Navbar fixed="bottom" bg="dark" variant="dark">
 <Container>
 <Col lg={12} className="text-center text-muted">
-<div>{fullYear}-{fullYear+1} All rights reserved by Bhavya Gupta</div>
+<div>{fullYear}-{fullYear+1} </div>
 </Col>
 </Container>
 </Navbar>

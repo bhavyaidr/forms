@@ -7,6 +7,7 @@ import Welcome from "./components/Welcome"
 
 import BookList from "./components/BookList"
 import Book from "./components/Book"
+import Login from "./components/Login"
 import Footer from "./components/Footer"
 import {BrowserRouter as Router, Switch,Route} from "react-router-dom"
 
@@ -27,6 +28,9 @@ marginTop:"20px"
 <Route path="/" exact component={Welcome}/>
 <Route path="/add" exact component={Book}/>
 <Route path="/list" exact component={BookList}/>
+<Route path="/login" exact component={Login}/>
+
+
 </Switch>
 </Col>
 

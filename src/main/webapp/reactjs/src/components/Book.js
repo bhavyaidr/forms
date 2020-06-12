@@ -57,19 +57,24 @@ bookChange =event =>{
 	this.setState({
 		[event.target.name]:event.target.value
 	})
-}
+};
 
-render(){
+bookList=()=>{
+return this.props.history.push("/list");
+};
+
+render()
+{
 
 const {firstName,lastName,password,email}=this.state;
 	return (
 
 	<div>
 	<div style={{"display":this.state.show ? "block" : "none"}}>
-	 <MyToast children = {{show:this.state.show, message:"Book Saved Successfully."}}/>
+	 <MyToast children = {{show:this.state.show, message:"Registered Successfully."}}/>
 	 </div>
 	 <Card className={"border border-dark bg-dark text-white"}>
-     		<Card.Header><FontAwesomeIcon icon={faPlusSquare} />Add New Book</Card.Header>
+     		<Card.Header><FontAwesomeIcon icon={faPlusSquare} /> Register</Card.Header>
      		<Form onReset={this.resetBook} onSubmit={this.submitBook} id="bookFormId">
 
      		<Card.Body>
@@ -136,6 +141,8 @@ const {firstName,lastName,password,email}=this.state;
      		<Button size="sm" variant="primary" type="reset">
              		<FontAwesomeIcon icon={faUndo} />Reset
              		</Button>
+
+
      		</Card.Footer>
 
      		</Card.Body>

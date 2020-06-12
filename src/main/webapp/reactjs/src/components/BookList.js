@@ -1,7 +1,7 @@
 import React from "react";
-import {Card,Table,ButtonGroup,Button} from "react-bootstrap"
+import {Card,Table} from "react-bootstrap"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faList,faEdit,faTrash} from "@fortawesome/free-solid-svg-icons"
+import {faList} from "@fortawesome/free-solid-svg-icons"
 import axios from "axios";
 
 
@@ -30,7 +30,7 @@ findAllBooks(){
 	render(){
 		return (
 			<Card className={"border border-dark bg-dark text-white"}>
-			<Card.Header><FontAwesomeIcon icon={faList} />Book List</Card.Header>
+			<Card.Header><FontAwesomeIcon icon={faList} /> Registered Users</Card.Header>
 			<Card.Body>
 			<Table bordered hover striped variant="dark">
 			<thead>
@@ -46,7 +46,7 @@ findAllBooks(){
   {
   this.state.books.length === 0  ?
     <tr align="center">
-      <td colSpan="6">Books Available.</td>
+      <td colSpan="6">Registered Users .</td>
 
     </tr> :
     this.state.books.map((book) => (
@@ -56,14 +56,10 @@ findAllBooks(){
     <td>{book.lastName}</td>
     <td>{book.password}</td>
     <td>{book.email}</td>
-    <td>
 
 
-    <ButtonGroup>
-    <Button size="sm" variant="outline-primary"><FontAwesomeIcon icon={faEdit} /></Button>{" "}
-    <Button size="sm" variant="outline-danger"><FontAwesomeIcon icon={faTrash} /></Button>
-    </ButtonGroup>
-</td>
+
+
     </tr>
 )   )
 }

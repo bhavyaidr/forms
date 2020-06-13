@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import {Card,Form,Button,Col} from "react-bootstrap"
 import MyToast from "./MyToast"
-import Welcome from "./Welcome"
+
+
 import {Link} from "react-router-dom"
 
 export default class Login extends Component {
@@ -56,7 +57,7 @@ export default class Login extends Component {
 
     	<div>
     	<div style={{"display":this.state.show ? "block" : "none"}}>
-    	 <MyToast children = {{show:this.state.show, message:"Book Saved Successfully."}}/>
+    	 <MyToast children = {{show:this.state.show, message:"Login Successfull."}}/>
     	 </div>
     	 <Card className={"border border-dark bg-dark text-white"}>
          		<Card.Header>Login</Card.Header>
@@ -92,7 +93,7 @@ export default class Login extends Component {
 
          		</Form.Row>
          		<Card.Footer style={{"textAlign":"right"}}>
-         		 <Link to={"Welcome"} >
+         		 <Link to={"Dashboard"} >
                      		<Button size="sm" variant="primary" type="submit">
                      		Login
                      		</Button>
@@ -102,6 +103,7 @@ export default class Login extends Component {
 
                                  		</Card.Body>
                                  		</Form>
+                              <center>   		<Link to="/add">Dont have an Account ? </Link></center>
                                  		</Card>
 
                             	</div>

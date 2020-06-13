@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSave,faPlusSquare,faUndo} from "@fortawesome/free-solid-svg-icons"
 import axios from "axios";
 import MyToast from "./MyToast"
+import {Link} from "react-router-dom"
 
 export default class Book extends Component {
 
@@ -147,6 +148,7 @@ const {firstName,lastName,password,email}=this.state;
 
      		</Card.Body>
      		</Form>
+     		 <center>   		<Link to="/login">Already have an Account ? </Link></center>
      		</Card>
 
 	</div>

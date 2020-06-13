@@ -21,7 +21,7 @@ return(
       <Link to={"list"} className="nav-link">Registered Users</Link>
        <Link to={"login"} className="nav-link">Login</Link>
        <Link to={"welcome"} className="nav-link"></Link>
-       <Link to={"dashboard"} className="nav-link">Dashboard</Link>
+
        <Link to={"home"} className="nav-link">Home</Link>
        <Link to={"admin"} className="nav-link">Admin</Link>
 

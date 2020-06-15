@@ -1,5 +1,5 @@
 
-/*import React, { Component } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import {Card,Form,Button,Col} from "react-bootstrap"
 import MyToast from "./MyToast"
@@ -117,9 +117,9 @@ export default class Login extends Component {
 
 }
 
-*/
 
-import React, { useState } from "react";
+
+/*import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from 'axios';
 import {Card,Form,Button,Col} from "react-bootstrap"
@@ -204,3 +204,4 @@ function Login(props) {
 }
 
 export default Login;
+*/

@@ -1,6 +1,6 @@
-package com.idr.forms;
+package com.idr.forms.repository;
 
-import com.idr.forms.Fields;
+import com.idr.forms.model.Fields;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

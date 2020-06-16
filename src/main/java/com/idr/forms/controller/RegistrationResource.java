@@ -1,5 +1,7 @@
-package com.idr.forms;
+package com.idr.forms.controller;
 
+import com.idr.forms.model.Fields;
+import com.idr.forms.repository.RegistrationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

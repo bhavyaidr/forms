@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation"
 import Welcome from "./components/Welcome"
 import Dashboard from "./components/Dashboard"
 import BookList from "./components/BookList"
-import Book from "./components/Book"
+import Register from "./components/Register"
 import Home from "./pages/Home"
 import Admin from "./pages/Admin"
 import Login from "./components/Login"
@@ -39,7 +39,7 @@ marginTop:"20px"
 
 <Switch>
 <Route path="/" exact component={Welcome}/>
-<Route path="/add" exact component={Book}/>
+<Route path="/add" exact component={Register}/>
 <Route path="/list" exact component={BookList}/>
 <Route path="/login" exact component={Login}/>
 <Route path="/dashboard" exact component={Dashboard}/>

@@ -6,7 +6,7 @@ import axios from "axios";
 import MyToast from "./MyToast"
 import {Link} from "react-router-dom"
 
-export default class Book extends Component {
+export default class Register extends Component {
 
 
 
@@ -14,8 +14,8 @@ constructor(props){
 	super(props);
 	this.state = this.initialState;
 	this.state.show=false
-	this.bookChange=this.bookChange.bind(this);
-	this.submitBook=this.submitBook.bind(this);
+	this.userChange=this.userChange.bind(this);
+	this.submitUser=this.submitUser.bind(this);
 
 }
 
@@ -23,16 +23,16 @@ initialState = {
 firstName:"",lastName:"",password:"",email:""
 }
 
-resetBook=() => {
+resetUser=() => {
 this.setState(() => this.initialState)
 }
 
-submitBook= event =>{
+submitUser= event =>{
 
 
 	event.preventDefault();
 
-	const book = {
+	const user = {
 	         firstName:  this.state.firstName,
     		 lastName: this.state.lastName,
     		 password: this.state.password,
@@ -41,7 +41,7 @@ submitBook= event =>{
 
 	};
 
-	axios.post("http://localhost:8080/forms",book)
+	axios.post("http://localhost:8080/forms",user)
 	.then(response => {
 	if(response.data!=null){
 	this.setState({"show":true});
@@ -54,13 +54,13 @@ submitBook= event =>{
 	this.setState(this.initialState);
 }
 
-bookChange =event =>{
+userChange =event =>{
 	this.setState({
 		[event.target.name]:event.target.value
 	})
 };
 
-bookList=()=>{
+userList=()=>{
 return this.props.history.push("/list");
 };
 
@@ -76,7 +76,7 @@ const {firstName,lastName,password,email}=this.state;
 	 </div>
 	 <Card className={"border border-dark bg-dark text-white"}>
      		<Card.Header><FontAwesomeIcon icon={faPlusSquare} /> Register</Card.Header>
-     		<Form onReset={this.resetBook} onSubmit={this.submitBook} id="bookFormId">
+     		<Form onReset={this.resetUser} onSubmit={this.submitUser} id="userFormId">
 
      		<Card.Body>
      		<Form.Row>
@@ -86,7 +86,7 @@ const {firstName,lastName,password,email}=this.state;
      		type="test"
      		name="firstName"
      		value={firstName}
-     		onChange={this.bookChange}
+     		onChange={this.userChange}
      		className={"bg-dark text-white"}
      		placeholder="Enter First Name" />
 
@@ -98,7 +98,7 @@ const {firstName,lastName,password,email}=this.state;
      		type="test"
      		name="lastName"
      		value={lastName}
-     		onChange={this.bookChange}
+     		onChange={this.userChange}
      		className={"bg-dark text-white"}
      		placeholder="Enter Last Name" />
 
@@ -110,10 +110,10 @@ const {firstName,lastName,password,email}=this.state;
      		<Form.Group as= {Col} controlId="formGridpassword">
      		<Form.Label>Password</Form.Label>
      		<Form.Control required autoComplete="off"
-     		 type="test"
+     		type="test"
      		name="password"
      		value={password}
-     		onChange={this.bookChange}
+     		onChange={this.userChange}
      		className={"bg-dark text-white"}
      		placeholder="Enter Password" />
 
@@ -124,43 +124,30 @@ const {firstName,lastName,password,email}=this.state;
      		type="test"
      		name="email"
      		value={email}
-     		onChange={this.bookChange}
+     		onChange={this.userChange}
      		className={"bg-dark text-white"}
      		placeholder="Enter Email" />
 
      		</Form.Group>
              </Form.Row>
 
-
-
-
-
-             <Card.Footer style={{"textAlign":"right"}}>
+            <Card.Footer style={{"textAlign":"right"}}>
      		<Button size="sm" variant="primary" type="submit">
      		<FontAwesomeIcon icon={faSave} />Submit
      		</Button>{" "}
      		<Button size="sm" variant="primary" type="reset">
-             		<FontAwesomeIcon icon={faUndo} />Reset
-             		</Button>
+             <FontAwesomeIcon icon={faUndo} />Reset
+             </Button>
 
 
      		</Card.Footer>
 
      		</Card.Body>
      		</Form>
-     		 <center>   		<Link to="/login">Already have an Account ? </Link></center>
+     		<center><Link to="/login">Already have an Account ? </Link></center>
      		</Card>
 
 	</div>
-
-
-
-
-
-
-
-
-		);
+        );
+	}
 }
-}
-

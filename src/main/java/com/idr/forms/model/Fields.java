@@ -1,4 +1,4 @@
-package com.idr.forms;
+package com.idr.forms.model;
 
 import javax.persistence.*;
 

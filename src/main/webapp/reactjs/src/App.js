@@ -5,7 +5,7 @@ import {Container, Row, Col} from "react-bootstrap"
 import Navigation from "./components/Navigation"
 import Welcome from "./components/Welcome"
 import Dashboard from "./components/Dashboard"
-import BookList from "./components/BookList"
+import UserList from "./components/UserList"
 import Register from "./components/Register"
 import Home from "./pages/Home"
 import Admin from "./pages/Admin"
@@ -40,7 +40,7 @@ marginTop:"20px"
 <Switch>
 <Route path="/" exact component={Welcome}/>
 <Route path="/add" exact component={Register}/>
-<Route path="/list" exact component={BookList}/>
+<Route path="/list" exact component={UserList}/>
 <Route path="/login" exact component={Login}/>
 <Route path="/dashboard" exact component={Dashboard}/>
 <Route exact path="/home" exact component={Home}/>

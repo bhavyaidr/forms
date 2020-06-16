@@ -5,23 +5,23 @@ import {faList} from "@fortawesome/free-solid-svg-icons"
 import axios from "axios";
 
 
-class BookList extends React.Component {
+class UserList extends React.Component {
 	constructor(props){
 		super(props);
 		this.state={
-			books: []
+			user: []
 		}
 	}
 
 	componentDidMount(){
-this.findAllBooks();
+this.findAllUsers();
 	}
 
-findAllBooks(){
+findAllUsers(){
 	axios.get("http://localhost:8080/forms")
     		.then(response => response.data)
     		.then((data) => {
-    			this.setState({books:data});
+    			this.setState({user:data});
     		})}
 
 
@@ -44,18 +44,18 @@ findAllBooks(){
   </thead>
   <tbody>
   {
-  this.state.books.length === 0  ?
+  this.state.user.length === 0  ?
     <tr align="center">
       <td colSpan="6">Registered Users .</td>
 
     </tr> :
-    this.state.books.map((book) => (
-    <tr key={book.id}>
+    this.state.user.map((user) => (
+    <tr key={user.id}>
 
-    <td>{book.firstName}</td>
-    <td>{book.lastName}</td>
-    <td>{book.password}</td>
-    <td>{book.email}</td>
+    <td>{user.firstName}</td>
+    <td>{user.lastName}</td>
+    <td>{user.password}</td>
+    <td>{user.email}</td>
 
 
 
@@ -73,4 +73,4 @@ findAllBooks(){
 	}
 }
 
-export default BookList;
+export default UserList;

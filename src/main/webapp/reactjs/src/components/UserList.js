@@ -4,7 +4,6 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList} from "@fortawesome/free-solid-svg-icons"
 import axios from "axios";
 
-
 class UserList extends React.Component {
 	constructor(props){
 		super(props);
@@ -12,21 +11,15 @@ class UserList extends React.Component {
 			user: []
 		}
 	}
-
 	componentDidMount(){
 this.findAllUsers();
 	}
-
 findAllUsers(){
 	axios.get("http://localhost:8080/forms")
     		.then(response => response.data)
     		.then((data) => {
     			this.setState({user:data});
     		})}
-
-
-
-
 	render(){
 		return (
 			<Card className={"border border-dark bg-dark text-white"}>
@@ -39,7 +32,6 @@ findAllUsers(){
       <th>LastName</th>
       <th>Password</th>
       <th>Email</th>
-
     </tr>
   </thead>
   <tbody>
@@ -47,19 +39,13 @@ findAllUsers(){
   this.state.user.length === 0  ?
     <tr align="center">
       <td colSpan="6">Registered Users .</td>
-
     </tr> :
     this.state.user.map((user) => (
     <tr key={user.id}>
-
     <td>{user.firstName}</td>
     <td>{user.lastName}</td>
     <td>{user.password}</td>
     <td>{user.email}</td>
-
-
-
-
     </tr>
 )   )
 }
@@ -67,10 +53,7 @@ findAllUsers(){
 			</Table>
 			</Card.Body>
 			</Card>
-
-
 			)
 	}
 }
-
 export default UserList;
